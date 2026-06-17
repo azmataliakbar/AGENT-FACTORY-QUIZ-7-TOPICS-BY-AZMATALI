@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# Quiz for 7 Topics — Agent Factory Knowledge Check
+A web-based quiz application designed to test understanding of the seven foundational topics from the Agent Factory ecosystem.
 
-```bash
+$$ 📚 Topics Covered
+This quiz covers the following essential topics from the Agent Factory documentation:
+
+The AI Agent Factory — Overview of the Agent Factory ecosystem and its four-channel delivery system
+
+The Agent Factory Thesis — Core concepts: Digital FTEs, AI-Native Companies, the Two-Layer Model, and the 10-80-10 Rule
+
+The AI Operating Layer — How the agentic era dissolves SaaS, the app, and the PC as we know them
+
+Getting Started — The crash course path from beginner to Agentic AI Engineer
+
+AI Prompting in 2026 — 13 concepts for effective AI communication
+
+Markdown In, HTML Out — The two document languages of working with agents
+
+Agent Factory Methodology — The Seven Principles, Seven Invariants, and spec-driven development
+
+🎯 Purpose
+This quiz helps learners:
+
+Reinforce understanding of key Agent Factory concepts
+
+Test comprehension of the foundational courses
+
+Identify knowledge gaps in the Agent Factory methodology
+
+Prepare for building AI agents and Digital FTEs
+
+🚀 Features
+Interactive Quiz Interface — Clean, responsive design
+
+Dynamic Routing — /quiz/[id] for individual quizzes
+
+Results Page — /quiz/[id]/results for score tracking
+
+Server-Side Rendering — Optimized for performance
+
+TypeScript — Type-safe code
+
+🛠️ Tech Stack
+Framework: Next.js 16.2.6
+
+Language: TypeScript
+
+Styling: CSS Modules
+
+Deployment: Vercel (recommended)
+
+📦 Installation
+Clone the repository:
+
+bash
+git clone https://github.com/azmataliakbar/quiz-app.git
+cd quiz-app
+Install dependencies:
+
+bash
+npm install
+Set up environment variables:
+
+bash
+cp .env.example .env.local
+Run development server:
+
+bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔧 Build for Production
+bash
+npm run build
+npm start
+📁 Project Structure
+text
+quiz-app/
+├── app/
+│   ├── quiz/
+│   │   ├── [id]/
+│   │   │   ├── page.tsx          # Dynamic quiz page
+│   │   │   └── results/
+│   │   │       └── page.tsx      # Results page
+│   │   └── page.tsx              # Quiz listing
+│   ├── layout.tsx
+│   └── page.tsx                  # Home page
+├── components/
+├── public/
+├── .env.example
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── README.md
+🌐 Environment Variables
+Variable	Description	Required
+NEXT_PUBLIC_API_URL	Backend API URL	Yes
+NEXT_PUBLIC_APP_URL	Application URL	No
+GEMINI_API_KEY	Gemini API key (optional)	No
+🚀 Deployment
+Deploy to Vercel (Recommended)
+https://vercel.com/button
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Push your code to GitHub
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Connect your repository to Vercel
 
-## Learn More
+Add environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy to Netlify
+Connect your GitHub repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set build command: npm run build
 
-## Deploy on Vercel
+Set publish directory: .next
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add environment variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy
+
+🔗 Related Resources
+Agent Factory Orientation
+
+Agent Factory Thesis
+
+AI Operating Layer
+
+Getting Started
+
+AI Prompting in 2026
+
+Markdown In, HTML Out
+
+📝 License
+MIT
+
+👨‍💻 Author
+Azmat Ali
+
+Built as part of the Agent Factory learning journey. Test your knowledge and master the concepts needed to build AI-Native Companies.
+
+

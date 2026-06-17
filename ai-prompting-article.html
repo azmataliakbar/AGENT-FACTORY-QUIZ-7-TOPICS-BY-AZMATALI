@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompting in 2026: A Crash Course</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #faf9f7;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #444;
+    --text-muted: #6b6b6b;
+    --border: #e5e0d6;
+    --accent: #4f46e5;
+    --accent-light: #eef2ff;
+    --accent-glow: rgba(79,70,229,0.07);
+    --info-bg: #f0f5ff;
+    --info-border: #c0d4f0;
+    --info-accent: #2563aa;
+    --success-bg: #edf7ed;
+    --success-border: #a3d3a3;
+    --success-accent: #2d6a2d;
+    --warn-bg: #fffbf0;
+    --warn-border: #f0d680;
+    --warn-accent: #92400e;
+    --note-bg: #f5f5f5;
+    --note-border: #d0d0d0;
+    --table-stripe: #faf8f2;
+    --table-header: #f3eee3;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1119;
+      --card-bg: #171a26;
+      --text: #e4e8f0;
+      --text-secondary: #bcc4d0;
+      --text-muted: #7a8594;
+      --border: #2d3544;
+      --accent: #818cf8;
+      --accent-light: #151830;
+      --accent-glow: rgba(129,140,248,0.08);
+      --info-bg: #111827;
+      --info-border: #263a5e;
+      --info-accent: #6ba5e0;
+      --success-bg: #0d1f14;
+      --success-border: #1a4a2a;
+      --success-accent: #4da64d;
+      --warn-bg: #1f1810;
+      --warn-border: #5a4020;
+      --warn-accent: #d4942a;
+      --note-bg: #1a1d24;
+      --note-border: #333840;
+      --table-stripe: #1d202c;
+      --table-header: #1f2330;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.25);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.35);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.45);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem 2.5rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+  }
+  .page-header h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    max-width: 850px;
+    margin: 0 auto 0.75rem;
+  }
+  .page-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  h1, h2, h3, h4 { line-height: 1.3; letter-spacing: -0.015em; }
+  h1 { font-size: 2rem; font-weight: 800; margin: 2.5rem 0 1rem; }
+  h2 {
+    font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  h3 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+  h4 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+
+  p { margin: 0 0 1.15rem; color: var(--text-secondary); }
+  strong { color: var(--text); font-weight: 600; }
+  em { color: var(--text-secondary); }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  a:hover { border-bottom-color: var(--accent); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: var(--shadow-sm);
+  }
+  blockquote p { margin: 0; color: var(--text); }
+
+  .admonition {
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid;
+  }
+  .admonition.info {
+    background: var(--info-bg);
+    border-color: var(--info-border);
+    border-left: 4px solid var(--info-accent);
+  }
+  .admonition.success {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+    border-left: 4px solid var(--success-accent);
+  }
+  .admonition.warning {
+    background: var(--warn-bg);
+    border-color: var(--warn-border);
+    border-left: 4px solid var(--warn-accent);
+  }
+  .admonition-heading {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+  }
+  .admonition-content p { margin: 0; }
+  .admonition-content ul, .admonition-content ol { margin: 0.5rem 0 0 1rem; }
+
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.93rem;
+    background: var(--card-bg);
+  }
+  thead { background: var(--table-header); }
+  thead th {
+    text-align: left; padding: 0.85rem 1rem;
+    font-weight: 700; font-size: 0.82rem;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--text-muted); border-bottom: 2px solid var(--border);
+  }
+  tbody td {
+    padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);
+    vertical-align: top; color: var(--text-secondary);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--table-stripe); }
+
+  ol, ul { margin: 1rem 0 1.5rem 1.5rem; color: var(--text-secondary); }
+  ol li, ul li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
+  ol li::marker { color: var(--accent); font-weight: 600; }
+  ul li::marker { color: var(--text-muted); }
+
+  img.content-img {
+    display: block; max-width: 100%; height: auto;
+    margin: 2rem auto; border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+  }
+
+  iframe {
+    max-width: 100%; border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+  }
+
+  pre {
+    background: var(--note-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--note-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: var(--text);
+  }
+
+  .concept-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .text-center { text-align: center; }
+  .text-muted { color: var(--text-muted); font-size: 0.9rem; }
+
+  @media (max-width: 640px) {
+    .container { padding: 1.5rem 1rem 3rem; }
+    .page-header { padding: 2rem 1rem 1.5rem; }
+    .page-header h1 { font-size: 1.8rem; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+    table { font-size: 0.8rem; }
+    thead th, tbody td { padding: 0.6rem 0.65rem; }
+    pre { font-size: 0.78rem; padding: 0.75rem 1rem; }
+  }
+
+  @media print {
+    :root { --bg: #fff; --card-bg: #fff; --text: #000; --text-secondary: #222; --border: #ccc; --accent: #000; }
+    body { font-size: 10pt; }
+    .container { max-width: 100%; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>AI Prompting in 2026: A Crash Course</h1>
+  <p class="subtitle">13 Concepts, 80% of Real Use — The gap between a novice prompt and a power-user prompt is not cleverness; it is a handful of habits anyone can learn in an afternoon.</p>
+</header>
+
+<div class="container">
+
+  <p>Most people use AI like a Google search. They type a short question, skim the answer, and move on. That works for trivia. It fails for everything that actually matters in your life and your work.</p>
+  <p>Power users do something different. They brief AI the way they would brief a smart-but-new colleague: with files, context, constraints, and a clear ask. They expect three options instead of one. They argue. They iterate. They check the work.</p>
+  <p>This page is that afternoon. Thirteen concepts, grouped into four short parts. No code, no setup, no jargon you cannot guess from context.</p>
+
+  <h2>📚 Teaching Aid</h2>
+  <div class="admonition success">
+    <div class="admonition-heading">Open Full Slideshow</div>
+    <div class="admonition-content"><p><strong><a href="https://docs.google.com/presentation/d/1g8NDTnDa18QEM2UPSzQAJK_TaPcPH4PmjZtqWV-71k4/edit?usp=sharing">View Full Presentation</a></strong> — AI Prompting 2026</p></div>
+  </div>
+
+  <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:2rem 0;border-radius:12px;box-shadow:var(--shadow-md)">
+    <iframe src="https://docs.google.com/presentation/d/1g8NDTnDa18QEM2UPSzQAJK_TaPcPH4PmjZtqWV-71k4/embed?start=false&loop=false&delayms=3000" style="position:absolute;top:0;left:0;width:100%;height:100%" frameborder="0" allowfullscreen title="AI Prompting 2026"></iframe>
+  </div>
+
+  <hr />
+
+  <!-- ── CORE INSIGHT ── -->
+  <blockquote>
+    <p><strong>The foundational fact:</strong> The model has no memory of its own. Every time you press send, it answers from scratch, using only what is in its context window at that moment. Engineers call this <em>stateless</em>. Almost every "advanced technique" on this page is one of two moves — getting the right context in, or keeping the wrong context out.</p>
+  </blockquote>
+
+  <div class="admonition success">
+    <div class="admonition-heading">How to Read This</div>
+    <div class="admonition-content"><p>Open a free account with one of Claude, ChatGPT, or Gemini in another browser tab right now. Then read straight through once for the shape, and come back to try the prompts. Reading without trying gives you the words; trying gives you the skill.</p></div>
+  </div>
+
+  <h3>A Short Note on What Changed Since You Last Looked</h3>
+  <p>If you used ChatGPT in 2022 or 2023 and decided it was a clever toy, the tool you remember is not the tool you have now:</p>
+  <ul>
+    <li><strong>Context windows grew by roughly 1000×.</strong> A 2026 model holds hundreds of thousands, sometimes a million words — a whole book, several days of speech, a folder of contracts.</li>
+    <li><strong>Reasoning became real.</strong> Models have explicit thinking modes that run for seconds, sometimes minutes, exploring multiple approaches before answering.</li>
+    <li><strong>Web search became a built-in tool.</strong> The model decides when a question needs fresh information and fires off a search mid-response.</li>
+    <li><strong>Code execution became a built-in tool.</strong> The model can write a program, run it, see the result, and use that result in its answer.</li>
+    <li><strong>Multimodal stopped being a sidebar.</strong> Drop a photo, PDF, spreadsheet, voice memo, or folder into a prompt.</li>
+    <li><strong>Desktop apps appeared.</strong> Cowork and OpenWork can find your files, draft emails, and update spreadsheets with permission.</li>
+    <li><strong>Command-line agents appeared for developers.</strong> Claude Code and OpenCode read across whole codebases, edit many files, run tests, and report back.</li>
+  </ul>
+  <p>If your mental model of these tools is out of date by even eighteen months, you are using them at maybe 20% of what they can do today. This page closes that gap.</p>
+
+  <hr />
+
+  <!-- ═══════════ PART 1 ═══════════ -->
+  <h2>Part 1: How AI Knows Things</h2>
+  <p>Once you understand what is actually happening when you ask AI a question, you stop being surprised by the failures.</p>
+
+  <h3>Concept 1 — Novice vs. Power User</h3>
+  <p>Watch what changes between the two prompts. The question is the same; the briefing is not.</p>
+  <img class="content-img" src="https://agentfactory.panaversity.org/assets/images/ai-fluency-novice-vs-power-user-84502bf20a7e0e3ea17c9012654ac6bc.webp" alt="Novice vs Power User" />
+
+  <p><strong>Real contrasts from the field:</strong></p>
+  <ul>
+    <li><strong>Buying a car.</strong> Novice: "which car is best?" Power: uploads spec sheets, dealer quotes, insurance plans, asks for trade-offs.</li>
+    <li><strong>Self-review.</strong> Novice: "write a self-review." Power: uploads project tracker, recent docs, voice memo of notes.</li>
+    <li><strong>Business idea critique.</strong> Novice: "critique my idea." Power: "Analyze objectively. Use this rubric: is there a problem worth solving, is there a market, is there a competitive advantage?"</li>
+    <li><strong>Writing a blog post.</strong> Novice: "write about BlackBerry" → AI slop. Power: outline first, critique outline, expand to bullets, then prose.</li>
+  </ul>
+
+  <blockquote>
+    <p><strong>AI is like a really smart fresh college grad. Highly motivated. Doesn't know much about you yet.</strong> Brief them like one.</p>
+  </blockquote>
+
+  <h3>Concept 2 — Pretrained Knowledge</h3>
+  <p>AI did not learn by experiencing the world. It learned by reading massive amounts of internet text. Frequency in training data ≈ reliability of the answer:</p>
+  <ul>
+    <li><strong>Strong:</strong> cooking, celebrity gossip, common medical advice, popular programming languages.</li>
+    <li><strong>Sparse:</strong> quasars, Cantonese (under 0.1% of internet text), regional history, niche professional knowledge.</li>
+    <li><strong>Absent:</strong> your company's secret data, your private calendar, anything after the model's cutoff date.</li>
+  </ul>
+
+  <div class="table-wrapper">
+  <table>
+    <thead><tr><th>Question type</th><th>How well-represented in training data?</th><th>Trust level</th></tr></thead>
+    <tbody>
+      <tr><td>"How do I make a roux?"</td><td>One of the most discussed topics on the internet.</td><td>High.</td></tr>
+      <tr><td>"Plot of a top-1000 movie."</td><td>Reviewed thousands of times.</td><td>High.</td></tr>
+      <tr><td>"History of an obscure village."</td><td>Possibly only one Wikipedia paragraph.</td><td>Low; verify.</td></tr>
+      <tr><td>"Recent regulatory change in my industry."</td><td>Almost certainly after the cutoff.</td><td>Trust nothing without web search.</td></tr>
+      <tr><td>"What did our company decide last quarter?"</td><td>Not in training data at all.</td><td>Trust nothing; model is guessing.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>Two practical consequences: <strong>don't waste time fixing typos</strong> (AI handles them fine), and <strong>watch for absorbed errors</strong> (a confidently wrong forum post becomes confidently wrong in the model).</p>
+
+  <h3>Concept 3 — The 3 Retrieval Modes</h3>
+  <p>When you ask a question, modern AI tools quietly choose how to answer. Either from pretrained knowledge alone, web search, or deep research — where they spend several minutes scanning dozens of sources and write a structured report.</p>
+  <img class="content-img" src="https://agentfactory.panaversity.org/assets/images/three-modes-507e746c3c0291bd6d06c0f09ba4ae81.webp" alt="Three Retrieval Modes" />
+
+  <div class="table-wrapper">
+  <table>
+    <thead><tr><th>Phrasing pattern</th><th>What it usually triggers</th></tr></thead>
+    <tbody>
+      <tr><td>"What is X" / "Summarize Y"</td><td>Pretrained only.</td></tr>
+      <tr><td>"What's the latest on X" / "Today" / "This week"</td><td>Web search.</td></tr>
+      <tr><td>"Research X thoroughly," "produce a report with citations"</td><td>Deep research.</td></tr>
+      <tr><td>Attaching files</td><td>Stays pretrained for files; may search for current context.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>AI vs. Google.</strong> They are not the same tool. Use Google for quick scans, navigating to a known site, or buying a thing. Use AI when you need synthesis: pros and cons, multi-source comparison, a written-out analysis.</p>
+
+  <hr />
+
+  <!-- ═══════════ PART 2 ═══════════ -->
+  <h2>Part 2: Talking to AI Well</h2>
+
+  <h3>Concept 4 — Context Is the Whole Game</h3>
+  <p>Humans hold about 4–7 things in working memory. Modern AI models hold hundreds of thousands of words at once — roughly the first 5 Harry Potter books or several days of continuous speech. But it can only read what you give it. Context is everything in the model's window: the system prompt, tool descriptions, your prompt, chat history, and any files you uploaded.</p>
+  <img class="content-img" src="https://agentfactory.panaversity.org/assets/images/context-stack-0d6a6d91f20c6b643bfa5286e2af8aa1.webp" alt="Context Stack" />
+
+  <p><strong>Before you press send, ask yourself what a smart new colleague would need in front of them to answer this well. Then attach those things.</strong></p>
+
+  <div class="table-wrapper">
+  <table>
+    <thead><tr><th>Checklist question</th><th>If yes, attach or describe it</th></tr></thead>
+    <tbody>
+      <tr><td>Is there a document the answer should be consistent with?</td><td>Attach it.</td></tr>
+      <tr><td>Is there a constraint the AI cannot infer (budget, time, who's on the team)?</td><td>State it.</td></tr>
+      <tr><td>Is there prior context (a previous decision, an existing process)?</td><td>Summarize in one paragraph.</td></tr>
+      <tr><td>Is there an output format you want (table, email, bullets)?</td><td>Name it.</td></tr>
+      <tr><td>Is there an audience (a boss, a child, a stranger)?</td><td>Name them.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="admonition warning">
+    <div class="admonition-heading">Context Rot</div>
+    <div class="admonition-content"><p>Modern context windows are large, but not infinite, and recall degrades inside them. Rule of thumb: <strong>when the topic changes, start a new conversation.</strong> A chat window is working memory, not storage. When the AI starts referencing earlier chat that's unrelated, gets longer and vaguer, or contradicts earlier constraints — reset. The reset is almost always faster than the rescue.</p></div>
+  </div>
+
+  <h4>Projects: Front-Load Context Once</h4>
+  <p>If you find yourself pasting the same files, descriptions, or constraints into multiple chats, that context belongs in a Project. Set it up once and every chat inside inherits it automatically. Claude calls it Projects, ChatGPT calls it Projects, Gemini calls it Notebooks.</p>
+
+  <h3>Concept 5 — Reasoning, or "Think Hard"</h3>
+  <p>Until 2023, the standard advice was "think step by step." That advice is now mostly obsolete. Modern models have built-in reasoning modes. Ask "think hard" or "think carefully before answering." On hard problems, the model can think for many seconds — sometimes more than ten minutes — internally exploring multiple approaches, checking its own work, and only then answering.</p>
+  <p>A 2025 METR study tracked AI's longest reliably completable task: mid-2024 it was ~7 human-minutes, by early 2025 it was ~1 human-hour, and it has been doubling roughly every seven months. The implication: <strong>hand AI real, hard tasks. It can handle more than your 2023 instincts suggest.</strong></p>
+
+  <h3>Concept 6 — Sycophancy and How to Neutralize It</h3>
+  <p>AI models are trained on human feedback — which responses got a thumbs up. Across millions of users, agreeing with people gets more thumbs up than disagreeing. A November 2025 Washington Post analysis found ChatGPT opened with an affirmation about 10× more often than with "no" or "wrong."</p>
+
+  <div class="table-wrapper">
+  <table>
+    <thead><tr><th>Subtle bait you might write</th><th>What it signals</th><th>Neutral rewrite</th></tr></thead>
+    <tbody>
+      <tr><td>"Find evidence that this strategy will work."</td><td>Conclusion is fixed.</td><td>"Evaluate. List strongest arguments for and against."</td></tr>
+      <tr><td>"Why is A better than B?"</td><td>A wins.</td><td>"Compare A and B. Score each on cost, risk, and time."</td></tr>
+      <tr><td>"Help me defend my decision."</td><td>Decision is locked.</td><td>"What's the strongest counter-argument I should be ready for?"</td></tr>
+      <tr><td>"Tell me my draft is ready."</td><td>AI tells you it is ready.</td><td>"Score this draft 1-10 on 4 criteria. There is always a next level."</td></tr>
+      <tr><td>"Confirm that this code is correct."</td><td>AI confirms.</td><td>"Find any bug, edge case, or unstated assumption."</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>Force a number.</strong> For each criterion, require a score on a fixed scale — 1 to 5, or 1 to 10 — with a one-sentence justification. The number forces commitment. Adjectives like "strong" give you nothing to act on; scores do.</p>
+
+  <h3>Concept 7 — The Brainstorm-Iterate Loop</h3>
+  <p>This is the single highest-leverage habit on the page. The way around AI's tendency toward average responses is not a magic prompt. It is a loop.</p>
+
+  <ol>
+    <li><strong>Give all relevant context up front.</strong></li>
+    <li><strong>Ask for 3 to 5 options, not one.</strong> Forcing alternatives pushes past the first instinct.</li>
+    <li><strong>Give explicit feedback.</strong> "I don't like option 1. I do like the stair-climbing idea but want it shorter."</li>
+    <li><strong>Ask for 3 to 5 new options informed by the feedback.</strong></li>
+    <li><strong>Iterate until you have one or two you genuinely like.</strong></li>
+    <li><strong>Then, and only then, ask AI to flesh out the chosen option in detail.</strong></li>
+  </ol>
+
+  <p>The total time is rarely more than forty-five minutes. The first ten minutes save the other thirty-five from being wasted. <strong>The shape stays constant across every domain:</strong> planning a trip, structuring a sales pitch, picking a college major, naming a product, writing a wedding toast, choosing a charity.</p>
+
+  <hr />
+
+  <!-- ═══════════ PART 3 ═══════════ -->
+  <h2>Part 3: Beyond Text</h2>
+
+  <h3>Concept 8 — Multimodal: Images, Audio, and What's Next</h3>
+  <p>AI can see images coarsely — strong on overall scene, whiteboard contents, handwriting (decent). Weak on fine details, counting small objects, and reading small print at the edge of an image.</p>
+  <p><strong>Image output:</strong> Modern AI generates images from text prompts. Two tips: (1) use a text AI to write your image prompt, and (2) build visual vocabulary — words like cinematic, watercolor, cyberpunk, isometric, low-poly are levers.</p>
+  <p><strong>Audio:</strong> You can dictate prompts, drop in meeting recordings for summaries, and ask the model to read its answer aloud. The non-obvious leverage: long-form dictation captures nuance typed prompts skip; meeting transcripts as context is one of the highest-leverage workflows for anyone in a job with meetings.</p>
+  <p><strong>Designer-quality diagrams without a designer:</strong> Ask Claude to visualize a concept as SVG → convert to PNG → paste into ChatGPT/Gemini and ask to redraw with professional design quality. Total time: ~10–15 minutes per diagram.</p>
+
+  <h3>Concept 9 — Building Small Apps with One Prompt</h3>
+  <p>Modern AI can build small games, websites, and tools from a single prompt. The recipe is three slots: Goal, Input, Output. Small things that fit on one screen, with no accounts and no external services, work. Anything beyond that needs more than one prompt — dedicated AI app-builders like v0, Bolt, and Lovable are the natural next step.</p>
+
+  <h3>Concept 10 — Data Analysis (The Model Writes and Runs Code)</h3>
+  <p>When you ask AI a question that needs calculation, modern tools quietly write code, run it, and return the result. <strong>Critical habit:</strong> ask explicitly — "Write and run code to answer this. Show me the code you ran." If the response doesn't include a code block, the model probably didn't run code. Demand a verifiable specific before the analysis: "Tell me the exact row count, column names, and date range before you analyze anything."</p>
+  <p>Treat AI data analysis the way you would treat work from a sharp junior analyst: useful, fast, almost always right, occasionally wrong in instructive ways.</p>
+
+  <hr />
+
+  <!-- ═══════════ PART 4 ═══════════ -->
+  <h2>Part 4: Working Safely and Choosing Tools</h2>
+
+  <h3>Concept 11 — AI Desktop Apps and Permissions</h3>
+  <p>AI desktop apps (Cowork, OpenWork) can, with permission, find your files, read them, and act on them. The workflow that makes this safe: tell it the task → ask for a plan, not action → review and edit the plan → only then approve execution.</p>
+  <div class="admonition warning">
+    <div class="admonition-heading">Read This Before Giving Any AI App File Access</div>
+    <div class="admonition-content"><p>Deleted files often do NOT go to your recycle bin when an AI app deletes them. Edited files do NOT keep an edit history. Until you've done this safely a few times, scope every permission to the smallest folder needed.</p></div>
+  </div>
+
+  <h3>Concept 12 — Cost, Speed, and Which Model to Use When</h3>
+  <img class="content-img" src="https://agentfactory.panaversity.org/assets/images/cost-tiers-e4a8d4f622a1e43440b44bc38c7b7bc9.webp" alt="Cost Tiers" />
+  <p><strong>Text:</strong> seconds, fractions of a cent. <strong>Speech:</strong> a few cents per minute. <strong>Images:</strong> tens of seconds, several cents. <strong>Video:</strong> minutes per generation, many cents to dollars. <strong>Deep research:</strong> minutes, several cents to a quarter.</p>
+  <p>Cost is barely a constraint at entry level — all major chatbots offer free access that handles the prompts on this page. Two habits: try the same prompt in 2–3 models routinely, and don't marry one tool. Switching is free.</p>
+
+  <div class="table-wrapper">
+  <table>
+    <thead><tr><th>Tool</th><th>Tends to be strong at</th><th>Tends to be weaker at</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Claude</strong></td><td>Reasoning, long documents, SVG/diagrams, code, careful writing voice</td><td>In-product photo-realistic image generation</td></tr>
+      <tr><td><strong>ChatGPT</strong></td><td>Top image generation, voice mode, conversational range</td><td>Can be verbose; over-formats with lists</td></tr>
+      <tr><td><strong>Gemini</strong></td><td>Fast web search, source synthesis, Google Workspace integration</td><td>Tone can feel clipped; shorter responses</td></tr>
+      <tr><td><strong>Meta AI</strong></td><td>Ubiquity+free (WhatsApp/Instagram), Muse Spark reasoning</td><td>Coding workflows, smaller ecosystem, inputs may train models</td></tr>
+      <tr><td><strong>DeepSeek</strong></td><td>Open-source, self-hostable, 1M-token context, low cost</td><td>Chat polish, consumer ecosystem lags big three</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><strong>The leaderboard to bookmark:</strong> <a href="https://arena.ai/leaderboard">Arena</a> — blind head-to-head comparisons across text, code, vision, image generation, search, and video. Check it once a month.</p>
+
+  <h3>Concept 13 — Models Checking Models</h3>
+  <p>When there is no ground truth, you can still get an objective signal by making models grade each other. Different models have different blind spots — different training data, different reward signals, teams emphasizing different things. The disagreement between them is the signal you cannot get from any single model alone.</p>
+
+  <img class="content-img" src="https://agentfactory.panaversity.org/assets/images/ai-fluency-three-tier-ladder-b9180cd41a92f9e065ac016aaf380c32.webp" alt="Three-Tier Ladder" />
+
+  <p><strong>Three nested versions of the same technique:</strong></p>
+  <ol>
+    <li><strong>Concept 6 Rubric Critique</strong> — one pass with named criteria scored 1–10. For quick sanity checks.</li>
+    <li><strong>Single-Model Self-Critique Loop</strong> — score, implement suggestions, repeat until plateau. For drafts and emails.</li>
+    <li><strong>Multi-Model Loop</strong> — self-critique + second model from different family cross-checking + third model. For high-stakes work.</li>
+  </ol>
+
+  <blockquote>
+    <p>Ask it to grade its own output, 1 to 10, against named criteria: "score this on clarity, accuracy, structure, and what is missing, 1-10 each, with a one-sentence justification." The first grade is usually 7 or 8. Then ask it to implement its own suggestions. Repeat until the grade plateaus around 9.</p>
+  </blockquote>
+
+  <hr />
+
+  <p class="text-muted" style="text-align:center; margin-top:3rem; padding:2rem 0; font-size:0.9rem;">
+    Source: <a href="https://agentfactory.panaversity.org/docs/ai-prompting-2026">The AI Agent Factory — AI Prompting in 2026</a><br/>
+    &copy; 2026 Panaversity. All Rights Reserved.
+  </p>
+
+</div>
+</body>
+</html>
