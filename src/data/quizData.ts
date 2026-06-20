@@ -5956,3 +5956,1885 @@ quizParts.push(
     conceptSpread: 5
   }
 );
+
+/* ──────────────────────────────────────────────
+   FOUNDATIONS — 2 parts × 20 MCQs
+   ────────────────────────────────────────────── */
+
+const foundations1: Question[] = [
+  {
+    id: 1,
+    question: "What are the Foundations courses for, according to the Foundations page?",
+    options: [
+      "They are advanced topics for experienced AI users",
+      "They are the skills every reader needs before picking a path — using AI or building AI Workers",
+      "They are optional extras for those who have time",
+      "They are only for developers"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "How many Foundation courses are there?",
+    options: [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "Where do you learn all six Foundation courses?",
+    options: [
+      "On your local machine with installed software",
+      "In a browser tab — Claude.ai, ChatGPT, or Gemini",
+      "In a terminal with command-line tools",
+      "In a physical classroom"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "What is the first Foundation course?",
+    options: [
+      "AI Prompting in 2026",
+      "Markdown In, HTML Out",
+      "What AI Actually Is",
+      "Code You Never Write"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 5,
+    question: "What is the second Foundation course?",
+    options: [
+      "What AI Actually Is",
+      "Code You Never Write",
+      "Skills & Connectors",
+      "AI Prompting in 2026"
+    ],
+    correctIndex: 3
+  },
+  {
+    id: 6,
+    question: "What is the third Foundation course?",
+    options: [
+      "Markdown In, HTML Out",
+      "What AI Actually Is",
+      "How to Think in the AI Era",
+      "Skills & Connectors"
+    ],
+    correctIndex: 0
+  },
+  {
+    id: 7,
+    question: "What is the fourth Foundation course?",
+    options: [
+      "AI Prompting in 2026",
+      "Code You Never Write",
+      "Skills & Connectors",
+      "How to Think in the AI Era"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "What is the fifth Foundation course?",
+    options: [
+      "Code You Never Write",
+      "What AI Actually Is",
+      "How to Think in the AI Era",
+      "Skills & Connectors"
+    ],
+    correctIndex: 3
+  },
+  {
+    id: 9,
+    question: "What is the sixth Foundation course?",
+    options: [
+      "Markdown In, HTML Out",
+      "How to Think in the AI Era",
+      "Skills & Connectors",
+      "AI Prompting in 2026"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "What does the 'What AI Actually Is' course teach?",
+    options: [
+      "How to write code from scratch",
+      "What the machine really is under the hood, so its surprises stop looking like magic or malfunction",
+      "How to build AI Workers",
+      "How to deploy to the cloud"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What does the 'AI Prompting in 2026' course teach?",
+    options: [
+      "How to train AI models",
+      "How to ask, so you get what you actually wanted",
+      "How to code in Python",
+      "How to deploy agents to production"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What does the 'Markdown In, HTML Out' course teach?",
+    options: [
+      "How to design websites from scratch",
+      "The two simple document languages every agent speaks",
+      "How to use CSS frameworks",
+      "How to build full-stack applications"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What does the 'Code You Never Write' course teach?",
+    options: [
+      "How to become a professional programmer",
+      "How to read and understand Python syntax",
+      "How to get AI to write, run, and check code for you, even if you have never coded",
+      "How to build web applications from scratch"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 14,
+    question: "What does the 'Skills & Connectors' course teach?",
+    options: [
+      "How to connect hardware devices",
+      "How to teach AI a task once, then give it safe access to your real apps",
+      "How to build APIs",
+      "How to configure network settings"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What does the 'How to Think in the AI Era' course teach?",
+    options: [
+      "How to train neural networks",
+      "When to reach for AI, when not to, and how to frame the problem",
+      "How to code from scratch",
+      "How to build AI companies"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "According to the Foundations page, the six courses build on each other. What is the order?",
+    options: [
+      "They are independent — any order works",
+      "They build from understanding the machine, to asking well, to structuring output, to using code, to connecting tools, to strategic thinking",
+      "They must be taken simultaneously",
+      "The order is alphabetical"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "What type of AI work will most of your everyday work happen in, according to the page?",
+    options: [
+      "A terminal or command line interface",
+      "A code editor like VS Code",
+      "The same browser tab where you learn the Foundations",
+      "A dedicated desktop application"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 18,
+    question: "What is your signal that you are ready for the next step (General Agents like Cowork or Claude Code)?",
+    options: [
+      "When you have completed all six courses",
+      "When uploading files into the chat every time starts to feel slow",
+      "When you can write code from memory",
+      "When you get a paid subscription"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What is the prerequisite for the Foundations courses?",
+    options: [
+      "A paid AI subscription",
+      "Previous coding experience in at least one language",
+      "A university degree in computer science",
+      "Nothing to install and nothing to set up — just a free chat account"
+    ],
+    correctIndex: 3
+  },
+  {
+    id: 20,
+    question: "What comes after the Foundations in the curriculum?",
+    options: [
+      "There is nothing after Foundations — it is the end",
+      "The next group is General Agents, where agents live on your computer and see your files directly",
+      "A final exam",
+      "A certification program"
+    ],
+    correctIndex: 1
+  }
+];
+
+const foundations2: Question[] = [
+  {
+    id: 1,
+    question: "According to the Foundations page, what two paths does the book split into after Foundations?",
+    options: [
+      "Web development and mobile development",
+      "Using AI to do your own work faster, and building AI Workers that do the work for you",
+      "Beginner and advanced",
+      "Free and paid"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "What does the 'What AI Actually Is' course reveal about the machine (Idea 3)?",
+    options: [
+      "The model has a built-in truth-checker",
+      "The model has no truth-checker of its own — this is key to understanding verification",
+      "The model always tells the truth",
+      "The model can verify its own outputs perfectly"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "What document languages does the Markdown/HTML course teach?",
+    options: [
+      "JSON and XML",
+      "YAML and TOML",
+      "Markdown (what you write) and HTML (what you ask for)",
+      "CSS and JavaScript"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 4,
+    question: "According to the Foundations page, what environment do you use for all six courses?",
+    options: [
+      "VS Code with extensions installed",
+      "A terminal with Python installed",
+      "A browser tab — Claude.ai, ChatGPT, or Gemini",
+      "A physical computer lab"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 5,
+    question: "What is the purpose of learning all six Foundation courses before picking a path?",
+    options: [
+      "To delay the decision as long as possible",
+      "So everything later builds on them — the same skills work everywhere",
+      "To satisfy a prerequisite requirement",
+      "To qualify for a certificate"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "What happens when you graduate from the browser to your machine for General Agents?",
+    options: [
+      "You stop using the browser entirely",
+      "Agents like Cowork or Claude Code run on your desktop and see your files directly",
+      "You need to install a special server",
+      "You lose access to the browser-based tools"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 7,
+    question: "According to the Foundations page image caption, what is the graduation path?",
+    options: [
+      "From chat to email",
+      "From browser to machine — you graduate only when the AI needs to touch your real files",
+      "From free to paid tier",
+      "From beginner to expert"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "What does the 'Code You Never Write' course enable non-programmers to do?",
+    options: [
+      "Build full production systems",
+      "Commission code by describing the problem, without writing or reading code syntax",
+      "Become software engineers",
+      "Train their own AI models"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What does the 'Skills & Connectors' course allow you to connect AI to?",
+    options: [
+      "Only Google Drive",
+      "Your real apps and data through safe, permission-based access",
+      "The internet at large",
+      "Only code repositories"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "What foundational concept does 'How to Think in the AI Era' build on?",
+    options: [
+      "The ability to code in Python",
+      "The AI Prompting and Markdown/HTML skills from earlier courses",
+      "Knowledge of cloud infrastructure",
+      "Understanding of neural networks"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What is the risk of skipping the Foundations and jumping straight into building?",
+    options: [
+      "There is no risk — you can start anywhere",
+      "You miss the base skills that make everything later possible and end up guessing instead of knowing",
+      "The AI tools will refuse to work",
+      "You will be locked out of the platform"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What does 'nothing to install' mean for the Foundations courses?",
+    options: [
+      "You need to install Python but nothing else",
+      "No risk to your own computer — everything runs in the browser",
+      "You need to install a browser extension",
+      "You need to install a code editor"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What is the minimum requirement to start the Foundations?",
+    options: [
+      "A paid subscription to Claude.ai",
+      "A laptop with 16GB of RAM",
+      "A free chat account and the ability to use a website",
+      "A GitHub account"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 14,
+    question: "Why does the page say the browser is safe for learning?",
+    options: [
+      "Because the browser has built-in antivirus",
+      "Because there is no risk to your own computer — everything runs in the chat's sandbox",
+      "Because the browser is faster than desktop apps",
+      "Because the browser uses less memory"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What does the Foundations page mean by 'graduate when you need to'?",
+    options: [
+      "You must pass a test to proceed",
+      "You stay in the browser until uploading files every time becomes slow, then move to desktop agents",
+      "You graduate after completing all courses in order",
+      "You need a certificate to advance"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "Which Foundation course teaches the concept that the model has no truth-checker?",
+    options: [
+      "AI Prompting in 2026",
+      "What AI Actually Is",
+      "Code You Never Write",
+      "How to Think in the AI Era"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "What format do the Foundations courses teach for writing to AI?",
+    options: [
+      "JSON schema",
+      "Pure prose paragraphs",
+      "Markdown — structure beats prose because headings and bullets remove guesswork",
+      "Code only"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 18,
+    question: "What is the relationship between the Foundations and the rest of the curriculum?",
+    options: [
+      "Foundations are optional prerequisites",
+      "Foundations are the base skills everything later builds on — do them once, here",
+      "Foundations are separate from the main curriculum",
+      "Foundations are the final advanced topics"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What desktop tools does the page mention as the next step after Foundations?",
+    options: [
+      "VS Code and IntelliJ",
+      "Cowork and Claude Code (or OpenWork and OpenCode)",
+      "Excel and Word",
+      "Photoshop and Illustrator"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "What is the key insight about the six Foundation courses?",
+    options: [
+      "They are independent and can be taken in any order",
+      "They build on each other — starting with understanding the machine, then asking, formatting, coding, connecting, and thinking strategically",
+      "They must be completed in a single day",
+      "They are only for non-technical users"
+    ],
+    correctIndex: 1
+  }
+];
+
+/* ──────────────────────────────────────────────
+   CODE YOU NEVER WRITE — 4 parts × 20 MCQs
+   ────────────────────────────────────────────── */
+
+const cynw1: Question[] = [
+  {
+    id: 1,
+    question: "What is the central promise of the Code You Never Write course?",
+    options: [
+      "You will learn to write Python like a professional",
+      "You describe the problem, the AI writes and runs the code, and you never write a line of code",
+      "You will become a full-stack developer in a week",
+      "You will learn to read code fluently"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "What is the 'new deal' described in Concept 1?",
+    options: [
+      "AI writes code and you debug it",
+      "AI is the developer, you are the client, and the developer works in seconds for free",
+      "You pair-program with AI",
+      "AI reviews your code for errors"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "What three things matured together to make AI a useful code writer?",
+    options: [
+      "Faster hardware, bigger datasets, better monitors",
+      "AI writes working code, AI runs the code itself, AI repairs the code itself",
+      "AI reads, AI writes, AI deploys",
+      "AI trains, AI tests, AI ships"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "What does the course say you should never ask yourself about a task anymore?",
+    options: [
+      "\"Can I describe this?\"",
+      "\"Can I write this?\" — you ask \"can I describe this?\" instead",
+      "\"Should I do this?\"",
+      "\"Is this worth doing?\""
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 5,
+    question: "What is code, according to Concept 2?",
+    options: [
+      "A mysterious set of symbols only experts can understand",
+      "A list of exact instructions that a computer follows perfectly, at any speed, any number of times",
+      "A creative writing exercise",
+      "A way to communicate with other programmers"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "Which programming language does AI use most for data problems (files, spreadsheets, reports)?",
+    options: [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java"
+    ],
+    correctIndex: 2
+  },
+  {
+    id: 7,
+    question: "Which programming language does AI use when you need something clickable in a browser?",
+    options: [
+      "Python",
+      "JavaScript or TypeScript",
+      "C++",
+      "Ruby"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "How does the AI decide which programming language to use?",
+    options: [
+      "You must specify the language in your prompt",
+      "The AI picks based on what your problem needs — you never choose",
+      "It always defaults to Python",
+      "It always defaults to JavaScript"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What is the key property of code worth memorizing?",
+    options: [
+      "Code is flexible and forgiving",
+      "Code is exact, in both directions — it computes correctly and also does the wrong thing perfectly at scale",
+      "Code is slow and unreliable",
+      "Code is only useful for developers"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "What does the recipe analogy illustrate about code?",
+    options: [
+      "Cooking is like programming",
+      "A recipe executed by a perfectly obedient robot with wrong instructions produces wrong output flawlessly — the brief failed, not the robot",
+      "Code is like a cookbook you can read",
+      "AI writes recipes, not code"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What is the VPRF test?",
+    options: [
+      "A programming framework for AI agents",
+      "The four signals that tell you a problem is a code problem: Volume, Precision, Repetition, Files",
+      "A testing methodology for code",
+      "A type of code review process"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What does the 'Volume' signal mean?",
+    options: [
+      "The data is too large to fit in memory",
+      "More items than you'd comfortably do by hand, like 300 files to rename or 5,000 rows to total",
+      "The code is too long to write",
+      "The output is too verbose"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What does the 'Precision' signal mean?",
+    options: [
+      "The code needs to be exactly right syntactically",
+      "A wrong digit has consequences — invoices, payroll, grades, reconciliations",
+      "The prompt must be worded exactly right",
+      "The output must be precise to the decimal"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 14,
+    question: "What does the 'Repetition' signal mean?",
+    options: [
+      "The code contains loops",
+      "You'll face the same task again next week or next month",
+      "The user keeps asking the same question",
+      "The output repeats the same information"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What does the 'Files' signal mean?",
+    options: [
+      "The code is stored in files",
+      "The problem lives in files, not in sentences — spreadsheets, exported data, folders of images, logs",
+      "Files need to be uploaded to the AI",
+      "The output should be saved to a file"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "What happens if a task trips none of the four VPRF signals?",
+    options: [
+      "It is still a code problem by default",
+      "It is an answer problem — use prompting skills, never think about code",
+      "It cannot be solved by AI",
+      "It requires a human expert"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "In the school administrator example, why did the AI miss three families behind on payments?",
+    options: [
+      "The AI was malfunctioning",
+      "The AI answered (pattern-matched from a skim) rather than computed — those families had partial payments that a skim reads as paid",
+      "The data was corrupted",
+      "The administrator asked the wrong AI tool"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 18,
+    question: "What is the 'one sentence' that prevents AI from estimating instead of computing?",
+    options: [
+      "\"Be very careful with the numbers\"",
+      "\"Write and run code to find them\"",
+      "\"Double-check your work\"",
+      "\"Use Python for this\""
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What are the five surfaces where AI can write and run code?",
+    options: [
+      "VS Code, IntelliJ, Sublime, Atom, Vim",
+      "Claude.ai, ChatGPT, Gemini (browser); Claude Code/OpenCode (folder); Cowork/OpenWork (desktop app)",
+      "Windows, Mac, Linux, iOS, Android",
+      "Python, JavaScript, Java, C++, Go"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "What was the bookkeeper's problem that code solved?",
+    options: [
+      "She needed to learn programming to automate her work",
+      "Two files that should match didn't — her ledger and the bank statement — and code reconciled 1,400 rows in seconds",
+      "She needed a better spreadsheet tool",
+      "She needed to hire a developer"
+    ],
+    correctIndex: 1
+  }
+];
+
+const cynw2: Question[] = [
+  {
+    id: 1,
+    question: "What is the three-line incantation that forces computation over estimation?",
+    options: [
+      "\"Write Python code. Show it to me. Run it.\"",
+      "\"Write and run code to answer this. Show me the code you ran. Before analyzing anything, tell me the exact row count, column names, and date range.\"",
+      "\"Compute this accurately. Use Python. Verify the result.\"",
+      "\"Run code. Check output. Report errors.\""
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "Why is the row count and column names check the 'cheapest lie detector'?",
+    options: [
+      "It confirms the file format is correct",
+      "If the AI is actually reading your file, row count and column names will be exactly right; if making things up, you'll get suspiciously round numbers",
+      "It checks the file size",
+      "It validates the date format"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "What should you write in your prompt instead of specifying 'in Python'?",
+    options: [
+      "Specify 'in Python' to ensure reliable results",
+      "Tell the AI to 'compute' or 'write and run code' — let the AI pick the right language",
+      "Specify 'in JavaScript' as a default",
+      "Never mention code at all"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "What is the silent failure mode of AI computation?",
+    options: [
+      "The AI refuses to compute",
+      "On anything answerable from a glance, the AI may skip code and estimate — and an estimate looks identical to a computation",
+      "The AI always computes but gets the wrong answer",
+      "The AI crashes when asked to compute"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 5,
+    question: "What are the five sections of a complete code brief?",
+    options: [
+      "Title, Author, Date, Version, Status",
+      "Goal, Input, Output, Rules, Edge cases",
+      "Problem, Solution, Code, Test, Deploy",
+      "Summary, Background, Analysis, Recommendation, Appendix"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "What is the 'Goal' section of a code brief?",
+    options: [
+      "The specific programming language to use",
+      "What problem is solved when this works",
+      "The budget for the task",
+      "The timeline for completion"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 7,
+    question: "What is the 'Input' section of a code brief?",
+    options: [
+      "The user's instructions to the AI",
+      "What you are giving the AI — files, their format, roughly how many rows or items",
+      "The data the AI needs to generate",
+      "The prompts used in previous attempts"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "What is the 'Output' section of a code brief?",
+    options: [
+      "The AI's response format",
+      "What exactly you want back — a number, a table, a chart, a cleaned file, an HTML report",
+      "The code that will be written",
+      "The error messages to expect"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What is the 'Rules' section of a code brief?",
+    options: [
+      "The rules of the programming language",
+      "The constraints a stranger wouldn't know — where your professional expertise lives",
+      "The laws and regulations governing the data",
+      "The formatting rules for the output"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "What is the 'Edge cases' section of a code brief?",
+    options: [
+      "The most common errors in the code",
+      "What should happen when the data is imperfect — blank rows, duplicates, wrong formats",
+      "The extreme scenarios for testing",
+      "The optional features to add"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What two sections of the brief do beginners most often skip?",
+    options: [
+      "Goal and Output",
+      "Rules and Edge cases",
+      "Input and Goal",
+      "Output and Input"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What is the professional move for handling imperfect data?",
+    options: [
+      "Clean the data yourself before giving it to AI",
+      "One sentence: 'If you hit a row you can't interpret, don't guess; skip it, and list every skipped row at the end'",
+      "Delete all imperfect rows before processing",
+      "Ask the AI to guess the correct values"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What should you do if you don't know your own edge cases?",
+    options: [
+      "Skip the edge cases section",
+      "Make discovery the first prompt: 'Before doing anything, examine the files and tell me what could be ambiguous or inconsistent'",
+      "Assume there are no edge cases",
+      "Ask a colleague to review the data"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 14,
+    question: "What is the verification method for code you cannot read?",
+    options: [
+      "Trust the AI's output completely",
+      "Run it and check results against things you independently know — verify machine output against calculations small enough to do yourself",
+      "Hire someone to read the code for you",
+      "Use a different AI tool to double-check"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What did the 'Prove it in two minutes' expense example demonstrate?",
+    options: [
+      "AI can estimate expenses from memory",
+      "You can verify AI's code output by hand-checking one slice: add up grocery lines and compare to what the code reported",
+      "AI refuses to do math",
+      "Code is slower than manual calculation"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "What is the reframe that Concept 6 asks you to make?",
+    options: [
+      "From trusting the AI's answer to verifying the AI's computation against independent facts",
+      "From using AI to writing code yourself",
+      "From asking questions to giving commands",
+      "From free tools to paid tools"
+    ],
+    correctIndex: 0
+  },
+  {
+    id: 17,
+    question: "What does it mean to 'brief the problem, not the program'?",
+    options: [
+      "Give the AI exact code to run",
+      "Specify what a good outcome looks like — no technical language needed — and let the AI translate intent into implementation",
+      "Write the code yourself and ask AI to review it",
+      "Use only technical jargon in your prompts"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 18,
+    question: "Why do people who half-know programming often write worse briefs than total beginners?",
+    options: [
+      "They use too technical language",
+      "They micromanage the 'how' and under-specify the 'what' — constraining the AI's choices based on unfounded preferences",
+      "They write longer prompts",
+      "They rely on outdated tools"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "In the teacher's 'who hasn't turned in the essay' brief, what Rule prevented wrong answers?",
+    options: [
+      "Use Python only",
+      "Match on student name with extra spaces or different capitalization; a student who submitted twice counts as submitted once",
+      "Sort alphabetically",
+      "Only process CSV files"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "What output format did the teacher's brief specify for the final result?",
+    options: [
+      "A plain text list",
+      "A CSV file",
+      "An HTML page that can be printed for class",
+      "A JSON object"
+    ],
+    correctIndex: 2
+  }
+];
+
+const cynw3: Question[] = [
+  {
+    id: 1,
+    question: "What are the five surfaces grouped into three kinds of place where AI can write and run code?",
+    options: [
+      "Phone, tablet, laptop, desktop, server",
+      "Browser (Claude.ai, ChatGPT, Gemini); Folder (Claude Code, OpenCode); Desktop app (Cowork, OpenWork)",
+      "Windows, Mac, Linux, iOS, Android",
+      "Free, Plus, Pro, Enterprise, Custom"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "What is the difference between Claude Code/OpenCode and Cowork/OpenWork?",
+    options: [
+      "They are the same tool with different names",
+      "Claude Code/OpenCode work inside a folder on your computer (for code-heavy work); Cowork/OpenWork are desktop apps for non-programmers",
+      "Claude Code is for Mac, OpenCode is for Windows",
+      "Claude Code is paid, OpenCode is free"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "What does a browser-based AI like Claude.ai use to execute code?",
+    options: [
+      "The user's local Python installation",
+      "Its own sandbox — it runs code in a safe, isolated environment in the cloud",
+      "A browser extension",
+      "A remote server the user must set up"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "When you upload a file to Claude.ai, what happens to the code it writes?",
+    options: [
+      "You must download and run it manually",
+      "The AI runs it in its sandbox, sees the result, and reports back — you never handle the code",
+      "It sends the code to your email",
+      "It saves the code to your computer"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 5,
+    question: "What is a 'script' in the context of this course?",
+    options: [
+      "A movie screenplay",
+      "A saved program that can be re-run later — a one-time solution turned into a reusable asset",
+      "A set of manual instructions",
+      "A list of commands typed by hand"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "What is the key safety rule before running a script on real files?",
+    options: [
+      "Always run scripts without checking first",
+      "Backup, dry run, scoped folders — so a mistake is a shrug, not a disaster",
+      "Never run scripts on real files",
+      "Only run scripts written by experts"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 7,
+    question: "What is a 'dry run'?",
+    options: [
+      "Running the code without saving any changes — it reports what it WOULD do",
+      "Running the code after deleting all files",
+      "Running the code without the internet",
+      "Running the code on fake data"
+    ],
+    correctIndex: 0
+  },
+  {
+    id: 8,
+    question: "What should you do before any AI operation on files?",
+    options: [
+      "Delete the originals to save space",
+      "Make a backup copy of the folder or files",
+      "Run the code three times",
+      "Ask a colleague to watch"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What is the 'scope' principle for AI file operations?",
+    options: [
+      "Give AI full access to everything for maximum effectiveness",
+      "Start with the smallest folder needed for the task — smaller scope means safer access",
+      "Never give AI access to any files",
+      "Always use the default folder"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "What does the course recommend about the 'first run' of any new script?",
+    options: [
+      "Run it on your real data immediately to see if it works",
+      "Test it on a copy or a small sample first",
+      "Skip testing and just run it",
+      "Have someone else run it"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What is the 'before picture' that AI code removes according to the course?",
+    options: [
+      "The need to use computers at all",
+      "The evening of manual hunting through data that used to eat your time",
+      "The need to hire assistants",
+      "The need to learn any software"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What happens when you ask the AI to 'write a script that does X' instead of 'write code to do X right now'?",
+    options: [
+      "The AI refuses — it only does one-time tasks",
+      "The AI produces a reusable file you can run again later, turning a one-time solution into a permanent asset",
+      "The AI writes worse code",
+      "The AI charges extra for scripts"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What file format should you save your reusable scripts in?",
+    options: [
+      "A Word document",
+      "A .py file (Python) that you can run from your computer's terminal",
+      "A PDF file",
+      "A text file with no extension"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 14,
+    question: "What is the default language for saved scripts that process data?",
+    options: [
+      "JavaScript",
+      "Python",
+      "TypeScript",
+      "Ruby"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What does the course say about the student with IMG_4501.jpg files?",
+    options: [
+      "She had to rename them manually one by one",
+      "AI renamed all 300 files in under a minute using the date stored inside each photo file",
+      "She needed to buy renaming software",
+      "The files could not be renamed"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "What did the doctor (clinic owner) ask AI to analyze?",
+    options: [
+      "Patient satisfaction surveys",
+      "A year of appointment exports to find which days and slots had the worst no-show rates",
+      "Medical records for diagnosis",
+      "Insurance claims data"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "What did the marketer's code problem involve?",
+    options: [
+      "Designing new ad creatives",
+      "Four platform exports with four different column layouts — merging them into one table with spend, leads, and cost-per-lead",
+      "Writing marketing copy",
+      "Analyzing social media engagement"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 18,
+    question: "What did the network engineer's AI script do?",
+    options: [
+      "Designed a new network topology",
+      "Logged into devices each morning, pulled interface status and error counters, and wrote a health report",
+      "Installed software patches",
+      "Responded to security incidents"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What is the recommended approach for running code on your own computer?",
+    options: [
+      "Install Python and all dependencies manually",
+      "Use Claude Code, OpenCode, Cowork, or OpenWork — they handle the environment setup for you",
+      "Use only browser-based tools forever",
+      "Hire a developer to set up your environment"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "What is the key limitation of browser-based code execution?",
+    options: [
+      "It cannot run Python — only JavaScript",
+      "It cannot access files on your local computer — you must upload them each time",
+      "It is slower than desktop execution",
+      "It costs extra money"
+    ],
+    correctIndex: 1
+  }
+];
+
+const cynw4: Question[] = [
+  {
+    id: 1,
+    question: "What is 'blast radius' in the context of AI code?",
+    options: [
+      "The physical damage caused by hardware failure",
+      "The scope of damage a mistake can cause — keep it small so a mistake is a shrug, not a disaster",
+      "The area affected by a software bug",
+      "The number of users impacted by an error"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "What is the first rule of safe AI code execution?",
+    options: [
+      "Never let AI touch your real files",
+      "Backup before any operation that modifies files",
+      "Always use the latest AI model",
+      "Run code only in the browser"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "What is the 'three-layer safety check' for AI file operations?",
+    options: [
+      "Check, double-check, triple-check",
+      "Backup first, test on a sample, start with read-only",
+      "Ask three different AIs to verify",
+      "Run three times and compare results"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "Why does the course recommend starting with read-only access?",
+    options: [
+      "Read-only is faster",
+      "It prevents the AI from accidentally modifying or deleting anything — you inspect before you allow changes",
+      "Read-only is the only option available",
+      "It uses less memory"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 5,
+    question: "What should you do before letting AI rename files in a folder?",
+    options: [
+      "Nothing — just proceed",
+      "Make a backup copy of the folder and test the rename on a few sample files first",
+      "Check each file name manually",
+      "Ask the AI to explain each rename"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "What is an 'audit trail' in the context of AI code execution?",
+    options: [
+      "A log of who ran what code and when",
+      "A record of what the AI did — what files it changed, what commands it ran — so you can review before accepting",
+      "A list of all errors encountered",
+      "A summary of the AI's decision-making process"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 7,
+    question: "What should you ask the AI to do before it executes any destructive action?",
+    options: [
+      "Proceed immediately",
+      "Show you the plan first and get your approval before executing",
+      "Ask another AI for a second opinion",
+      "Run the action three times"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "What is a 'Project' in the context of the AI tools?",
+    options: [
+      "A temporary chat session",
+      "A persistent workspace where you keep your scripts, briefs, and related conversations organized",
+      "A project management methodology",
+      "A paid subscription tier"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What should you save from a successful AI code session?",
+    options: [
+      "Nothing — the AI remembers everything",
+      "The script, the brief, and example output — so you or a colleague can run it again later",
+      "Only the final numbers",
+      "Only the error messages"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "What is the course's advice for saving scripts you might use again?",
+    options: [
+      "Email them to yourself",
+      "Save them in a dedicated folder (like 'my-scripts') with a descriptive name and a brief at the top",
+      "Print them out",
+      "Memorize the commands"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What is the single sentence that holds the entire Code You Never Write course?",
+    options: [
+      "\"AI can write any code you need\"",
+      "\"You are not learning to write code; you are learning to be a good client for code\"",
+      "\"Code is the new literacy\"",
+      "\"Everyone should learn Python\""
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "According to the course, what do good clients do?",
+    options: [
+      "They write the code themselves",
+      "They write clear briefs, check the work against things they can measure, and keep what they paid for",
+      "They hire developers to do everything",
+      "They learn every programming language"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What is the difference between what you will never do and what you will learn to do?",
+    options: [
+      "You will never code and will never verify output",
+      "You will never write or read code syntax; you will learn to check what the code DID",
+      "You will never use AI; you will learn to code manually",
+      "You will never trust AI; you will learn to do everything yourself"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 14,
+    question: "What is the course's advice for handling errors in AI-written code?",
+    options: [
+      "Fix the errors yourself by reading the code",
+      "Copy the error message back to the AI — it repairs its own code based on the error",
+      "Restart the conversation from scratch",
+      "Switch to a different AI tool"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What should you NOT do when the AI writes code that doesn't work?",
+    options: [
+      "Try to fix the code yourself",
+      "Paste the error back and let the AI fix it — debugging is part of what you're delegating",
+      "Give up on the task",
+      "Blame the AI tool"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "What is the recurring pattern across all professions in the course examples?",
+    options: [
+      "Each profession needed to learn Python first",
+      "Each had a problem that was always describable but never commissionable until now — describe the problem, AI does the work",
+      "Each profession had a unique problem that only they could solve",
+      "Each needed specialized AI tools"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "What makes the 'Code You Never Write' approach different from AI coding in 2023?",
+    options: [
+      "Nothing — the approach is the same",
+      "In 2023, AI handed you code and walked away; today, AI writes, runs, and fixes the code itself in the same response",
+      "In 2023, AI was better at coding",
+      "In 2023, you needed a paid subscription"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 18,
+    question: "What is the core discipline that makes verification possible without reading code?",
+    options: [
+      "Trust the AI's output always",
+      "Check results against things you independently know — verify one slice you can compute yourself",
+      "Use multiple AI tools to cross-check",
+      "Ask a programmer to review the output"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What does the course say about the future of code?",
+    options: [
+      "Code will become obsolete",
+      "For seventy years, code had a gatekeeper (you had to write it); that gate is now open — Python is available to anyone who can describe a problem",
+      "Only professional developers will use code",
+      "Code will be replaced by natural language entirely"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "What is the closing message of the Code You Never Write course philosophy?",
+    options: [
+      "\"Go learn Python\"",
+      "\"Describe done, receive done, with the arithmetic guaranteed\"",
+      "\"AI is the future of coding\"",
+      "\"Code is dead, long live AI\""
+    ],
+    correctIndex: 1
+  }
+];
+
+quizParts.push(
+  {
+    id: 19,
+    title: "Foundations Part 1: The Six Foundation Courses",
+    subtitle: "Course Overview, Purpose, Sequence & Prerequisites",
+    concepts: "F Concepts 1–3",
+    color: "from-rose-500 to-orange-600",
+    questions: foundations1,
+    conceptStart: 1,
+    conceptSpread: 3
+  },
+  {
+    id: 20,
+    title: "Foundations Part 2: Core Concepts & Next Steps",
+    subtitle: "Key Ideas, Browser-Based Learning, Graduating to Desktop Agents",
+    concepts: "F Concepts 4–6",
+    color: "from-pink-500 to-rose-600",
+    questions: foundations2,
+    conceptStart: 4,
+    conceptSpread: 3
+  },
+  {
+    id: 21,
+    title: "Code You Never Write Part 1: The New Deal",
+    subtitle: "Code No Longer Gated, What Code Is, The VPRF Test",
+    concepts: "CYNW Concepts 1–3",
+    color: "from-emerald-500 to-teal-600",
+    questions: cynw1,
+    conceptStart: 1,
+    conceptSpread: 3
+  },
+  {
+    id: 22,
+    title: "Code You Never Write Part 2: Commissioning Code",
+    subtitle: "Force Computation, Five-Section Brief, Verification, Good Client Craft",
+    concepts: "CYNW Concepts 4–7",
+    color: "from-teal-500 to-cyan-600",
+    questions: cynw2,
+    conceptStart: 4,
+    conceptSpread: 4
+  },
+  {
+    id: 23,
+    title: "Code You Never Write Part 3: The Surfaces & Keeping Scripts",
+    subtitle: "Browser, Folder, Desktop Apps, Scripts, Dry Runs, Reusable Assets",
+    concepts: "CYNW Concepts 8–11",
+    color: "from-cyan-500 to-sky-600",
+    questions: cynw3,
+    conceptStart: 8,
+    conceptSpread: 4
+  },
+  {
+    id: 24,
+    title: "Code You Never Write Part 4: Safety, Durability & The Client Mindset",
+    subtitle: "Blast Radius, Backups, Audit Trails, Projects, Being a Good Client",
+    concepts: "CYNW Concepts 12–13",
+    color: "from-sky-500 to-blue-600",
+    questions: cynw4,
+    conceptStart: 12,
+    conceptSpread: 2
+  }
+);
+
+/* ──────────────────────────────────────────────
+   WHAT AI ACTUALLY IS — 2 parts × 20 MCQs
+   ────────────────────────────────────────────── */
+
+const wai1: Question[] = [
+  {
+    id: 1,
+    question: "What is the single sentence that defines what a language model is?",
+    options: [
+      "A machine that looks up facts from a vast internal encyclopedia",
+      "A machine that, given some text, predicts what text most plausibly comes next, one small piece at a time",
+      "A machine that executes pre-programmed responses based on keywords",
+      "A machine that searches the internet for answers in real time"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "What mental model do most people incorrectly assume about AI?",
+    options: [
+      "That it predicts the next word",
+      "That it works like a very fast librarian who retrieves facts",
+      "That it uses tokens",
+      "That it has no memory"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "What does the model do when the training text has no well-worn continuation for a prompt?",
+    options: [
+      "It says 'I don't know' and stops",
+      "It produces the most plausible-sounding continuation by blending what sounds similar",
+      "It searches the internet for the answer",
+      "It asks the user for more information"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "What is the machine doing in both cases — when it gives a correct answer and when it gives a made-up one?",
+    options: [
+      "Two different processes — one is retrieval, the other is guessing",
+      "The exact same thing: predicting a plausible continuation",
+      "It searches a database in one case and guesses in the other",
+      "It uses different models for each"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 5,
+    question: "What does 'training' mean in the context of AI models?",
+    options: [
+      "The user teaching the model by correcting it in conversation",
+      "The one-time education where the model was shown enormous text and adjusted itself to predict better — done in the past by the company",
+      "The model learning from user feedback in real time",
+      "The model searching the web for new information"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "What are the frozen internal numbers of a trained model called?",
+    options: [
+      "Tokens",
+      "Weights or parameters",
+      "Context",
+      "Queries"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 7,
+    question: "What happens when you correct the model in a conversation and it says 'you're right, my mistake'?",
+    options: [
+      "It has learned from the correction and updated its memory",
+      "It has predicted the text that plausibly follows a correction — it has not actually learned anything",
+      "It saves the correction to a database",
+      "It updates its training weights"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "What is 'inference'?",
+    options: [
+      "The one-time training process",
+      "What happens every time you use the model: the frozen weights run on your prompt to predict a continuation",
+      "The model learning from new data",
+      "The model searching the web"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What does the 'knowledge cutoff' refer to?",
+    options: [
+      "When the model stops learning after a certain amount of use",
+      "Training ended on a certain date — anything after that is not in the weights",
+      "The maximum number of facts the model can store",
+      "The date when the model was first released"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "Why can't an AI model know about your private company data?",
+    options: [
+      "It is programmed to withhold private information",
+      "Your company data was never in the training text, so the weights contain nothing about it",
+      "It refuses to discuss private matters",
+      "It only stores data for 30 days"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What two distinct faculties does a human expert have that an AI model lacks?",
+    options: [
+      "Speech and hearing",
+      "One that generates an answer and a second that checks it — the model has only the first",
+      "Memory and reasoning",
+      "Reading and writing"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What does the course call the AI's production of fluent, confident, completely false statements?",
+    options: [
+      "A glitch",
+      "The machine working exactly as built — predicting a plausible continuation where it happens not to be true",
+      "A bug that needs to be fixed",
+      "A training error"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What is the common term for when AI produces fluent false statements?",
+    options: [
+      "Misinformation",
+      "Hallucination",
+      "Overfitting",
+      "Bias"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 14,
+    question: "Why is hallucination NOT a glitch according to the course?",
+    options: [
+      "Because the model is designed to tell lies",
+      "Because it is the machine working exactly as built — predicting a plausible continuation, in a spot where it happens not to be true",
+      "Because all AI models have this bug",
+      "Because the training data was corrupted"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "What is the 'reframe' the course asks you to carry out of Idea 1?",
+    options: [
+      "Start picturing a librarian who retrieves facts",
+      "Stop picturing a librarian who retrieves. Start picturing a writer who continues.",
+      "Think of AI as a search engine",
+      "Think of AI as a human expert"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "Why does the model never say 'I don't have that' like a librarian would?",
+    options: [
+      "Because it has access to all information",
+      "Plausible continuation is its native act — it never stops to check whether the continuation is true unless specifically trained to",
+      "Because it's programmed to always have an answer",
+      "Because it searches the web automatically"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "What is 'temperature' in an AI model?",
+    options: [
+      "The physical temperature of the server",
+      "A setting that controls how adventurously the model picks from plausible next tokens — low is steady, high is creative",
+      "The amount of heat the GPU generates",
+      "A measure of the model's emotional state"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 18,
+    question: "Why does asking the same question twice give different answers?",
+    options: [
+      "The model changes its mind between queries",
+      "The model predicts a spread of plausible next tokens and samples from it — different samples produce different wording",
+      "The model forgets the first answer",
+      "The model learns between queries"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What is the mechanical root of the 'frequency equals reliability' rule?",
+    options: [
+      "Frequent topics are stored in a special part of the model",
+      "The more often a true continuation appeared in training text, the more strongly the machine predicts it",
+      "Frequent topics are easier for the model to search for",
+      "The model prioritizes frequently asked questions"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "What is the difference between how model 'memory' features work vs. actual learning?",
+    options: [
+      "Memory features change the model's weights just like training",
+      "Memory features save facts as text and re-insert them into context — it's context, not learning. The weights never change.",
+      "Memory features are the same as training",
+      "Memory features only work on paid plans"
+    ],
+    correctIndex: 1
+  }
+];
+
+const wai2: Question[] = [
+  {
+    id: 1,
+    question: "What are tokens?",
+    options: [
+      "Individual letters in a word",
+      "Chunks that are usually a word or piece of a word — the model only ever sees these, not letters",
+      "The model's internal memory units",
+      "Special characters used in programming"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 2,
+    question: "Why does the model miscount letters in words like 'strawberry'?",
+    options: [
+      "Because it has poor vision",
+      "Because it sees chunks (tokens), not letters — counting letters inside a chunk is like counting rooms from a street address",
+      "Because it wasn't trained on spelling",
+      "Because the word is too long"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 3,
+    question: "Why do typos in your prompt rarely matter?",
+    options: [
+      "The model autocorrects everything",
+      "A misspelled word still maps to chunks close enough to the intended meaning",
+      "The model ignores misspelled words entirely",
+      "The model only reads the first and last letters"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 4,
+    question: "What is the 'context desk' analogy for?",
+    options: [
+      "The model's permanent storage",
+      "The context window — the limited space where everything the model sees sits before it predicts the next piece",
+      "The model's training data",
+      "The model's physical hardware"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 5,
+    question: "What happens to old conversation turns when a chat gets very long?",
+    options: [
+      "They are deleted permanently",
+      "They may be compacted or summarized to make room, losing specifics",
+      "They stay exactly as they were",
+      "They are saved to a separate file"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 6,
+    question: "What is the model's confident tone according to Idea 6?",
+    options: [
+      "Evidence that it is right",
+      "A style it learned from confident human writing — decoupled from truth, not a reliability signal",
+      "A sign that it has verified its answer",
+      "A built-in truth meter"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 7,
+    question: "What is the 'jagged frontier'?",
+    options: [
+      "The boundary of the model's knowledge cutoff",
+      "The observation that AI is brilliant at some things and terrible at others, and the pattern is not obvious from the outside",
+      "The edge of the context window",
+      "The limit of the model's reasoning ability"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 8,
+    question: "What does the strawberry test demonstrate?",
+    options: [
+      "That AI is good at math",
+      "That a machine which can write programs cannot reliably count letters — because it sees tokens, not letters",
+      "That AI is bad at fruit-related questions",
+      "That AI needs more training data"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 9,
+    question: "What do tools (Idea 8) let the AI do that it cannot do alone?",
+    options: [
+      "Think more deeply",
+      "Act in the world — search the web, run code, access files, write to databases",
+      "Learn from conversations",
+      "Store memories permanently"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 10,
+    question: "How do tools like web search change what the model can do?",
+    options: [
+      "They change the model's weights",
+      "They put real, current facts into the context window, which the model then continues from",
+      "They replace the model entirely",
+      "They give the model a second truth-checking faculty"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 11,
+    question: "What is 'thinking' (reasoning) according to Idea 9?",
+    options: [
+      "A separate logical processor inside the model",
+      "Just more prediction — the model predicts internal monologue tokens that explore approaches, check work, and correct course before the visible answer",
+      "A human-like consciousness",
+      "A database lookup for solutions"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 12,
+    question: "What does thinking mode add to the prediction loop?",
+    options: [
+      "Web search capability",
+      "Internal reasoning tokens before the visible answer — exploring approaches and checking its own work",
+      "A separate truth-checking module",
+      "Access to the model's training data"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 13,
+    question: "What is the overarching summary of all nine ideas?",
+    options: [
+      "AI is a super-intelligent machine that knows everything",
+      "A prediction machine that learned by reading and has no organ for truth — fluent everywhere, reliable only where text was thick. You are the part that checks.",
+      "AI is a search engine with a chat interface",
+      "AI is a database that responds to queries"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 14,
+    question: "In the context window analogy, what does 'compacting' refer to?",
+    options: [
+      "Making the model smaller",
+      "Summarizing old conversation turns into a short paragraph to make room for new content",
+      "Deleting the entire conversation",
+      "Saving the conversation to a file"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 15,
+    question: "Why does the same message cost more in non-English languages?",
+    options: [
+      "The model charges extra for translations",
+      "Non-English text is chopped into more tokens per word because training was English-heavy",
+      "Non-English languages require more computing power",
+      "The model has separate pricing for each language"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 16,
+    question: "What are parameters (or weights) in a model?",
+    options: [
+      "The user's settings for the AI",
+      "The frozen numbers inside the model — more usually means more capable and more expensive to run",
+      "The tokens in the context window",
+      "The commands the AI can execute"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 17,
+    question: "What is 'mixture of experts (MoE)'?",
+    options: [
+      "A team of human experts reviewing AI output",
+      "A way of arranging parameters so only a fraction switch on for any given token — making larger models faster and cheaper",
+      "A collection of specialized AI models",
+      "A training method using expert data"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 18,
+    question: "What is 'quantization'?",
+    options: [
+      "A mathematical formula for AI accuracy",
+      "Storing the model's numbers at lower precision so it fits on smaller, cheaper hardware — same behavior, lighter footprint",
+      "A method of training models faster",
+      "A way to increase model accuracy"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 19,
+    question: "What is the tuition academy example used to illustrate?",
+    options: [
+      "How AI can find local businesses",
+      "A non-software example of hallucination — the AI invented a fee schedule because there was no real data to predict toward",
+      "How AI can help with school administration",
+      "The limits of AI's knowledge about education"
+    ],
+    correctIndex: 1
+  },
+  {
+    id: 20,
+    question: "How does the course describe the relationship between the six Foundations courses?",
+    options: [
+      "They are independent and can be taken in any order",
+      "This course gives the mechanism (what the machine is); the prompting course gives the practice (the habits). The handoff between them is the line.",
+      "All courses cover the same material from different angles",
+      "This course is only for developers"
+    ],
+    correctIndex: 1
+  }
+];
+
+quizParts.push(
+  {
+    id: 25,
+    title: "What AI Actually Is Part 1: The Machine",
+    subtitle: "Predicts Next Word, Frozen Weights, No Truth-Checker, Temperature",
+    concepts: "WAI Ideas 1–3",
+    color: "from-violet-500 to-indigo-600",
+    questions: wai1,
+    conceptStart: 1,
+    conceptSpread: 3
+  },
+  {
+    id: 26,
+    title: "What AI Actually Is Part 2: Behavior & Agency",
+    subtitle: "Tokens, Context Window, Confidence, Jagged Frontier, Tools, Thinking",
+    concepts: "WAI Ideas 4–9",
+    color: "from-indigo-500 to-blue-600",
+    questions: wai2,
+    conceptStart: 4,
+    conceptSpread: 6
+  }
+);
