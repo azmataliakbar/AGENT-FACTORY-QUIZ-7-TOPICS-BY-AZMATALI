@@ -1,3 +1,5 @@
+import { allTopicsBlock1, allTopicsBlock2, allTopicsBlock3, allTopicsBlock4 } from "./allTopicsQuizData";
+
 export interface Question {
   id: number;
   question: string;
@@ -7836,5 +7838,9 @@ quizParts.push(
     questions: wai2,
     conceptStart: 4,
     conceptSpread: 6
-  }
+  },
+  allTopicsBlock1,
+  allTopicsBlock2,
+  allTopicsBlock3,
+  allTopicsBlock4
 );
